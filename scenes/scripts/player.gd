@@ -17,9 +17,15 @@ func handle_input(delta):
 		go_right(delta)
 		
 func go_left(delta):
-	position.x -= speed * delta
+	var left_limit = 50
+	if position.x > left_limit:
+		position.x -= speed * delta
 	$sprite.flip_h = true
+	$shape.position.x = -24
 		
 func go_right(delta):
-	position.x += speed * delta
+	var right_limit = get_viewport_rect().size.x - 50
+	if position.x < right_limit:
+		position.x += speed * delta
 	$sprite.flip_h = false
+	$shape.position.x = 24
