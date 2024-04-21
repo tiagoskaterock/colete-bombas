@@ -14,3 +14,8 @@ texture = ExtResource( 1 )
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 232, 472 )
+
+[node name="timer_bomba" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="timer_bomba" to="." method="_on_timer_bomba_timeout"]
