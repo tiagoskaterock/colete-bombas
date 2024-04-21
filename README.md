@@ -32,7 +32,6 @@ To run the project:
 
 ## 📸 Screenshots
 
- Uncomment the following lines to show game screenshots
 <p align="center">
   <img src="1.gif" alt="Gameplay Screenshot" />
 </p>
