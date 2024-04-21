@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/chao.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/chao.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/scripts/fase.gd" type="Script" id=4]
 
 [node name="fase" type="Node2D"]
@@ -17,5 +18,9 @@ position = Vector2( 232, 472 )
 
 [node name="timer_bomba" type="Timer" parent="."]
 autostart = true
+
+[node name="chao" parent="." instance=ExtResource( 3 )]
+collision_layer = 4
+collision_mask = 2
 
 [connection signal="timeout" from="timer_bomba" to="." method="_on_timer_bomba_timeout"]

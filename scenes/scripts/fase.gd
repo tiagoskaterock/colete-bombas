@@ -37,3 +37,5 @@ func get_bomba_speed():
 	
 func set_bomba_speed(new_bomba_speed):
 	bomba_speed = new_bomba_speed
+
+
