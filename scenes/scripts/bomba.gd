@@ -26,12 +26,12 @@ func level_up(how_much):
 func add_point(): 
 	get_parent().add_point()
 	
-func player_pegou_bomba(): 	
+func player_pegou_bomba():
 	add_point()
 	handle_level_up()
 	queue_free()
 
-func get_points(): 
+func get_points():
 	return get_parent().get_points()
 	
 func _on_bomb_area_entered(area):
@@ -39,4 +39,5 @@ func _on_bomb_area_entered(area):
 		bateu_no_chao()
 
 func bateu_no_chao():
+	get_parent().perde_ponto()
 	queue_free()

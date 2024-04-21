@@ -4,6 +4,7 @@ var points = 0
 var pre_bomba = preload("res://scenes/bomba.tscn")
 var bomba_speed = 1
 var bomba_wait_time_em_segundos = .3
+const PONTOS_PERDIDOS_AO_BATER_NO_CHAO = 3
 
 func _ready():	
 	randomize()
@@ -18,7 +19,7 @@ func _on_timer_bomba_timeout():
 	
 func add_point():
 	points += 1
-	print('points: ' + str(points))
+	update_points()
 	
 func add_bomba():
 	var bomba = pre_bomba.instance()
@@ -37,5 +38,16 @@ func get_bomba_speed():
 	
 func set_bomba_speed(new_bomba_speed):
 	bomba_speed = new_bomba_speed
-
-
+	
+func update_points():
+	$"Label".text = str(get_points())
+	
+func perde_ponto():
+	if get_points() > 0 + PONTOS_PERDIDOS_AO_BATER_NO_CHAO:
+		points -= PONTOS_PERDIDOS_AO_BATER_NO_CHAO
+	else:
+		zera_pontos()
+	update_points()
+		
+func zera_pontos():
+	points = 0

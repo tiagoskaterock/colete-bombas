@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/chao.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/chao.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/scripts/fase.gd" type="Script" id=4]
+
+[sub_resource type="ShaderMaterial" id=1]
+
+[sub_resource type="Theme" id=2]
 
 [node name="fase" type="Node2D"]
 script = ExtResource( 4 )
@@ -12,6 +16,16 @@ script = ExtResource( 4 )
 position = Vector2( 256, 352 )
 scale = Vector2( 0.817891, 1.25044 )
 texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 1 )
+margin_left = 16.0
+margin_top = 32.0
+margin_right = 56.0
+margin_bottom = 72.0
+rect_scale = Vector2( 2.78445, 2.7068 )
+theme = SubResource( 2 )
+text = "0"
 
 [node name="player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 232, 472 )
