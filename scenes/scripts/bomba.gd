@@ -3,6 +3,7 @@ extends Area2D
 var speed
 const GRAVITY_ACCEL = 1.03
 const LEVEL_UP_ADD = .1
+const PRE_FUMACA = preload("res://scenes/fumaca.tscn")
 
 func _ready():
 	speed = get_parent().get_bomba_speed()
@@ -39,5 +40,13 @@ func _on_bomb_area_entered(area):
 		bateu_no_chao()
 
 func bateu_no_chao():
+	mostra_fumaca()
 	get_parent().perde_ponto()
 	queue_free()
+	
+func mostra_fumaca():
+	var fumaca = PRE_FUMACA.instance()
+	fumaca.position = position
+	get_parent().add_child(fumaca)
+	fumaca.play("default")
+	

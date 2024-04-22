@@ -51,3 +51,4 @@ func perde_ponto():
 		
 func zera_pontos():
 	points = 0
+	
