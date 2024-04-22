@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/catch.mp3-2ba9d5d26df2cbe36707d87c2a2721b5.mp3str"
+
+[deps]
+
+source_file="res://assets/fx/catch.mp3"
+dest_files=[ "res://.import/catch.mp3-2ba9d5d26df2cbe36707d87c2a2721b5.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

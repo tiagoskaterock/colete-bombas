@@ -6,6 +6,7 @@ const LEVEL_UP_ADD = .1
 const PRE_FUMACA = preload("res://scenes/fumaca.tscn")
 const PRE_RASTRO = preload("res://scenes/rastro.tscn")
 const PRE_SOM_DE_EXPLOSAO = preload("res://scenes/explosao.tscn")
+const PRE_SOM_DE_PEGAR = preload("res://scenes/catch.tscn")
 const RASTRO_ACIMA_DA_BOMBA_EM_PIXELS = 30
 const TEMPO_ENTRE_RASTROS_EM_SEGUNDOS = 0.1
 
@@ -34,9 +35,14 @@ func add_point():
 	get_parent().add_point()
 	
 func player_pegou_bomba():
+	toca_som_de_pegar()
 	add_point()
 	handle_level_up()
 	queue_free()
+	
+func toca_som_de_pegar():
+	var som_de_pegar = PRE_SOM_DE_PEGAR.instance()
+	get_parent().add_child(som_de_pegar)	
 
 func get_points():
 	return get_parent().get_points()
