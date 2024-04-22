@@ -6,9 +6,10 @@ var bomba_speed = 1
 var bomba_wait_time_em_segundos = .3
 const PONTOS_PERDIDOS_AO_BATER_NO_CHAO = 3
 
-func _ready():	
+func _ready():
 	randomize()
 	start_bombas()
+	$music.play()
 	
 func start_bombas():
 	$"timer_bomba".wait_time = bomba_wait_time_em_segundos

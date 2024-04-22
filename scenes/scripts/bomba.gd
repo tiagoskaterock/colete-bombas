@@ -5,6 +5,7 @@ const GRAVITY_ACCEL = 1.03
 const LEVEL_UP_ADD = .1
 const PRE_FUMACA = preload("res://scenes/fumaca.tscn")
 const PRE_RASTRO = preload("res://scenes/rastro.tscn")
+const PRE_SOM_DE_EXPLOSAO = preload("res://scenes/explosao.tscn")
 const RASTRO_ACIMA_DA_BOMBA_EM_PIXELS = 30
 const TEMPO_ENTRE_RASTROS_EM_SEGUNDOS = 0.1
 
@@ -45,15 +46,20 @@ func _on_bomb_area_entered(area):
 		bateu_no_chao()
 
 func bateu_no_chao():
+	toca_som_de_explosao()
 	mostra_fumaca()
 	get_parent().perde_ponto()
-	queue_free()
+	queue_free()	
 	
 func mostra_fumaca():
 	var fumaca = PRE_FUMACA.instance()
 	fumaca.position = position
 	get_parent().add_child(fumaca)
 	fumaca.play("default")
+	
+func toca_som_de_explosao():
+	var explosao = PRE_SOM_DE_EXPLOSAO.instance()
+	get_parent().add_child(explosao)
 	
 func mostra_rastro():
 	var rastro = PRE_RASTRO.instance()

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/chao.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/chao.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/scripts/fase.gd" type="Script" id=4]
+[ext_resource path="res://assets/songs/music.mp3" type="AudioStream" id=5]
 
 [sub_resource type="ShaderMaterial" id=1]
 
@@ -36,5 +37,8 @@ autostart = true
 [node name="chao" parent="." instance=ExtResource( 3 )]
 collision_layer = 4
 collision_mask = 2
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="timeout" from="timer_bomba" to="." method="_on_timer_bomba_timeout"]
