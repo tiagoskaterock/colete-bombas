@@ -1,19 +1,19 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/smoke/smoke_05.png" type="Texture" id=1]
-[ext_resource path="res://assets/smoke/smoke_01.png" type="Texture" id=2]
-[ext_resource path="res://assets/smoke/smoke_04.png" type="Texture" id=3]
-[ext_resource path="res://assets/smoke/smoke_07.png" type="Texture" id=4]
-[ext_resource path="res://assets/smoke/smoke_06.png" type="Texture" id=5]
-[ext_resource path="res://assets/smoke/smoke_09.png" type="Texture" id=6]
-[ext_resource path="res://assets/smoke/smoke_08.png" type="Texture" id=7]
-[ext_resource path="res://assets/smoke/smoke_02.png" type="Texture" id=8]
-[ext_resource path="res://assets/smoke/smoke_03.png" type="Texture" id=9]
+[ext_resource path="res://assets/explosion/exp_01.png" type="Texture" id=1]
+[ext_resource path="res://assets/explosion/exp_03.png" type="Texture" id=2]
+[ext_resource path="res://assets/explosion/exp_02.png" type="Texture" id=3]
+[ext_resource path="res://assets/explosion/exp_07.png" type="Texture" id=4]
+[ext_resource path="res://assets/explosion/exp_05.png" type="Texture" id=5]
+[ext_resource path="res://assets/explosion/exp_06.png" type="Texture" id=6]
+[ext_resource path="res://assets/explosion/exp_04.png" type="Texture" id=7]
+[ext_resource path="res://assets/explosion/exp_08.png" type="Texture" id=8]
+[ext_resource path="res://assets/explosion/exp_09.png" type="Texture" id=9]
 [ext_resource path="res://scenes/scripts/fumaca.gd" type="Script" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 7 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": false,
 "name": "default",
 "speed": 15.0
@@ -22,7 +22,6 @@ animations = [ {
 [node name="fumaca" type="AnimatedSprite"]
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 1 )
-frame = 5
 script = ExtResource( 10 )
 
 [connection signal="animation_finished" from="." to="." method="_on_fumaca_animation_finished"]
